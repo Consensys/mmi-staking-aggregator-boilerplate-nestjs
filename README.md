@@ -2,7 +2,7 @@
 
 A boilerplate Nest.js application to run and host your **adapter REST API**, and integrate with the [MetaMask Instiutional Staking Aggregator](https://consensys.gitlab.io/codefi/products/mmi/staking-aggregator-auth-poc/).
 
-Implementats the [required OpenAPI Specification](https://consensys.gitlab.io/codefi/products/mmi/staking-aggregator-auth-poc/docs/integrating-via-rest-api/adapter-openapi) and pre-configures the [Authentication](https://consensys.gitlab.io/codefi/products/mmi/staking-aggregator-auth-poc/docs/integrating-via-rest-api/authentication).
+Implements the [required OpenAPI Specification](https://consensys.gitlab.io/codefi/products/mmi/staking-aggregator-auth-poc/docs/integrating-via-rest-api/adapter-openapi) and pre-configures the [Authentication](https://consensys.gitlab.io/codefi/products/mmi/staking-aggregator-auth-poc/docs/integrating-via-rest-api/authentication).
 
 ## Setup
 
