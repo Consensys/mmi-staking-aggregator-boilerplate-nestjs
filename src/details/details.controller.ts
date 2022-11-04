@@ -8,7 +8,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger'
 import { Observable, of } from 'rxjs'
-import { Details } from './details'
+import { Details } from './dto/details'
 
 @ApiTags('Details')
 @Controller('details')

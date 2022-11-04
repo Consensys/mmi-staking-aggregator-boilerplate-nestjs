@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs'
 import { SimpleDeposit } from './dto/simple.deposit'
 import { SimpleStakeResponse } from './dto/simple.stake.response'
 
-@ApiTags('Staking')
+@ApiTags('Stakes')
 @Controller('stakes')
 export class StakesController {
   @Post()
