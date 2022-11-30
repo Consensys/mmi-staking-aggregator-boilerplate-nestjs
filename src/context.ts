@@ -25,9 +25,9 @@ export const ApplicationContext = async () => {
     })
 
     const options = new DocumentBuilder()
-      .setTitle('Acme Adapter REST API')
+      .setTitle('Acme / MMI Staking Connector')
       .setDescription(
-        "This REST API is used for integrating Acme's staking services with the MetaMask Institutional Staking Aggregator.",
+        "This REST API is used for integrating Acme's staking services with MMI Staking.",
       )
       .setVersion(`v${packageJson.version}`)
       .addOAuth2()

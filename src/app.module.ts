@@ -9,7 +9,7 @@ import { HealthController } from './health/health.controller'
 import { AuthModule } from './auth/auth.module'
 import { StakesModule } from './stakes/stakes.module'
 import { DetailsModule } from './details/details.module'
-import { UsersModule } from './users/users.module'
+import { HeartbeatModule } from './heartbeat/heartbeat.module'
 
 @Module({
   imports: [
@@ -24,7 +24,7 @@ import { UsersModule } from './users/users.module'
     AuthModule,
     StakesModule,
     DetailsModule,
-    UsersModule,
+    HeartbeatModule,
   ],
   controllers: [HealthController],
   providers: [],
