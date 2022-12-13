@@ -1,62 +1,56 @@
 import { ApiProperty } from '@nestjs/swagger'
+import { IsBoolean, IsDefined, IsNumber, Max, Min } from 'class-validator'
+import { EstimatedGrossRewardsRateDto } from './estimated.gross.rewards.rate.dto'
+import { NodeUptimeDto } from './node.uptime.dto'
 
 export class Details {
-  @ApiProperty({
-    name: 'estimatedGrossRewards',
-    type: 'number',
-    minimum: 0,
-    maximum: 1,
-    example: 0.056,
-    description:
-      'The current estimated rewards percentage you will pay before fees and penalties.',
-  })
-  estimatedGrossRewards: number
+  estimatedGrossRewardsRate: EstimatedGrossRewardsRateDto
 
   @ApiProperty({
-    name: 'fees',
-    type: 'number',
-    minimum: 0,
-    maximum: 1,
-    example: 0.05,
     description:
-      'The fee, as percentage, on the staking rewards/earning which you charge as a staking provider.',
+      "The staking provider's operator fee rate (%), charged based on a percentage of staking rewards.",
+    minimum: 0,
+    maximum: 100,
+    example: 5,
+    required: true,
   })
+  @Min(0)
+  @Max(100)
+  @IsNumber()
+  @IsDefined()
   fees: number
 
   @ApiProperty({
-    name: 'tvl',
-    type: 'number',
-    example: 7060624149.296207,
     description:
-      'The current Total Value Locked in your validator nodes, in `dollars`.',
+      "TVL is the sum of the validators balances that are not subject to NDA constraints. It is the amount of ETH in the operator's public validators. It includes initial 32ETH deposit + Consensus Layer rewards.",
+    minimum: 0,
+    example: 7060624149.296207,
+    required: true,
   })
+  @Min(0)
+  @IsNumber()
+  @IsDefined()
   tvl: number
 
-  @ApiProperty({
-    name: 'nodeUptime',
-    type: 'number',
-    minimum: 0,
-    maximum: 1,
-    example: 0.9995,
-    description: '`TODO TBC` Percentage of successful attestations.',
-  })
-  nodeUptime: number
+  nodeUptime: NodeUptimeDto
 
   @ApiProperty({
-    name: 'slashingProtection',
-    type: 'boolean',
+    description:
+      'Whether the staking provider provides an Integrity Rebate or not. The balance of the Validator that has undergone the Slashing Event will be captured immediately prior to the Slashing Event, and again at the point in time the Validator enters the withdrawable state. The Integrity Rebate will be the difference between the two aforementioned balances.',
     example: true,
-    description:
-      'Whether you provide insurance, protection or refunds if the validator is slashed.',
+    required: true,
   })
-  slashingProtection: boolean
+  @IsBoolean()
+  @IsDefined()
+  integrityRebate: boolean
 
   @ApiProperty({
-    name: 'estimatedValidationActivationDelay',
-    type: 'string',
-    example: '3600',
     description:
-      '`TODO TBC` An estimated delay in seconds before the validator activates.',
+      'Whether the staking provider provides an Availability Rebate or not. In the event Node Operator (Partner) does not meet the applicable Availability Commitment, Client is eligible to receive a rebate (the “Availability Rebate”), except that the Availability Rebate does not apply to any Validator to which the Integrity Rebate already applies. The Availability Rebate will be calculated as the difference between (i) the Staking Reward actually earned by the Validators that are due the Availability Rebate and (ii) the Staking Reward that such Validators would have earned if the Availability Commitment (which corresponds, for the purposes of this Section, to Monthly Uptime Percentage equal to (but not greater than) 99.5%) was met at the relevant time.',
+    example: false,
+    required: true,
   })
-  estimatedValidationActivationDelay: string
+  @IsBoolean()
+  @IsDefined()
+  availabilityRebate: boolean
 }
