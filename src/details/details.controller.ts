@@ -26,12 +26,22 @@ export class DetailsController {
   getDetails(): Observable<Details> {
     // TODO Implement me!
     const details = new Details()
-    details.estimatedGrossRewards = 0.056
-    details.fees = 0.05
+    details.estimatedGrossRewardsRate = {
+      '1D': 0.0137,
+      '1W': 0.0961,
+      '1M': 0.4166,
+      '1Y': 5,
+    }
+    details.fees = 5
     details.tvl = 7060624149.296207
-    details.nodeUptime = 0.9995
-    details.slashingProtection = true
-    details.estimatedValidationActivationDelay = '3600'
+    details.nodeUptime = {
+      '1D': 93.2,
+      '1W': 96.9,
+      '1M': 95,
+      '1Y': 92.1,
+    }
+    details.integrityRebate = true
+    details.availabilityRebate = false
     return of(details)
   }
 }
