@@ -4,6 +4,7 @@ import { EstimatedGrossRewardsRateDto } from './estimated.gross.rewards.rate.dto
 import { NodeUptimeDto } from './node.uptime.dto'
 
 export class Details {
+  @ApiProperty()
   estimatedGrossRewardsRate: EstimatedGrossRewardsRateDto
 
   @ApiProperty({
@@ -32,6 +33,7 @@ export class Details {
   @IsDefined()
   tvl: number
 
+  @ApiProperty()
   nodeUptime: NodeUptimeDto
 
   @ApiProperty({
