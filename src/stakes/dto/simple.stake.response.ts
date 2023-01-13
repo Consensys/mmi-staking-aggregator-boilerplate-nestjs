@@ -26,6 +26,7 @@ export class SimpleStakeResponse {
     example: '0x93247f2209abcacf57b75a51dafae777f9dd38bc',
     description:
       'An ethereum 1 address, uniquely identifying them. 20-bytes, hex encoded with 0x prefix, case insensitive.',
+    required: true,
   })
   fee_recipient: Eth1Address
 }
