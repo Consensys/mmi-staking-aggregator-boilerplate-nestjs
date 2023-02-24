@@ -5,11 +5,11 @@ import { ScheduleModule } from '@nestjs/schedule'
 import { TerminusModule } from '@nestjs/terminus'
 import config, { validationSchema } from './config/configuration'
 
-import { HealthController } from './health/health.controller'
 import { AuthModule } from './auth/auth.module'
-import { StakesModule } from './stakes/stakes.module'
 import { DetailsModule } from './details/details.module'
-import { WithdrawalsModule } from './withdrawals/withdrawals.module';
+import { HealthController } from './health/health.controller'
+import { StakesModule } from './stakes/stakes.module'
+import { WithdrawalsModule } from './withdrawals/withdrawals.module'
 
 @Module({
   imports: [
