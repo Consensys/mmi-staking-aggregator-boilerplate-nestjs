@@ -9,6 +9,7 @@ import { HealthController } from './health/health.controller'
 import { AuthModule } from './auth/auth.module'
 import { StakesModule } from './stakes/stakes.module'
 import { DetailsModule } from './details/details.module'
+import { WithdrawalsModule } from './withdrawals/withdrawals.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { DetailsModule } from './details/details.module'
     AuthModule,
     StakesModule,
     DetailsModule,
+    WithdrawalsModule,
   ],
   controllers: [HealthController],
   providers: [],
