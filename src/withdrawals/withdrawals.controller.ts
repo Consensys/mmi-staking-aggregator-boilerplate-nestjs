@@ -35,7 +35,6 @@ export class WithdrawalsController {
     summary: 'Request a signed voluntary exit message',
     description: `Returns a [signed voluntary exit message](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#signedvoluntaryexit),
           but **does not** initiate the actual exit.
-          The user can later on submit the message to the Beacon chain via their own node to effectively initiate the exit in autonomy.
       `,
   })
   @ApiBearerAuth()
