@@ -17,11 +17,11 @@ import { Observable, of } from 'rxjs'
 import {
   ApiInternalServerErrorResponseGeneric,
   ApiUnauthorizedResponseGeneric,
-} from '../apiErrorResponsesGeneric'
+} from '../api-error-responses-generic'
 import {
   ApiInvalidPubKeyResponse,
   ApiValidatorNotFoundResponse,
-} from './apiResponses'
+} from './api-error-responses'
 import { RequestSignedVemParams } from './dto/request-signed-vem.params'
 import { VoluntaryExitMessage } from './dto/voluntary-exit-message.dto'
 

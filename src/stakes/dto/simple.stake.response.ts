@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
+import { ApiPropertyEth1Address } from '../../api-properties'
 import { ChainDepositConfiguration } from './chain.deposit.configuration'
 import { DepositData } from './deposit.data'
 import { Eth1Address } from './eth1.address'
@@ -19,14 +20,6 @@ export class SimpleStakeResponse {
   })
   stake: DepositData
 
-  @ApiProperty({
-    name: 'fee_recipient',
-    type: Eth1Address,
-    pattern: '^0x[a-fA-F0-9]{40}$',
-    example: '0x93247f2209abcacf57b75a51dafae777f9dd38bc',
-    description:
-      'An ethereum 1 address, uniquely identifying them. 20-bytes, hex encoded with 0x prefix, case insensitive.',
-    required: true,
-  })
+  @ApiPropertyEth1Address()
   fee_recipient: Eth1Address
 }
