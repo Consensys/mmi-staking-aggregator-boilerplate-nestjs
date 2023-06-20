@@ -11,8 +11,8 @@ import {
   ApiBadRequestResponseGeneric,
   ApiUnauthorizedResponseGeneric,
 } from '../api-error-responses-generic'
-import { SimpleDeposit } from './dto/simple.deposit'
-import { SimpleStakeResponse } from './dto/simple.stake.response'
+import { SimpleDeposit } from './models/simple.deposit'
+import { SimpleStakeResponse } from './models/simple.stake.response'
 
 @ApiTags('Stakes')
 @Controller()
