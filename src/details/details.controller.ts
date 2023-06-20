@@ -8,7 +8,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger'
 import { Observable, of } from 'rxjs'
-import { Details } from './dto/details'
+import { Details } from './models/details'
 
 @ApiTags('Details')
 @Controller('details')
@@ -23,25 +23,11 @@ export class DetailsController {
   @ApiUnauthorizedResponse()
   @ApiForbiddenResponse()
   @ApiInternalServerErrorResponse()
-  getDetails(): Observable<Details> {
+  public getDetails(): Observable<Details> {
     // TODO Implement me!
     const details = new Details()
-    details.estimatedGrossRewardsRate = {
-      '1D': 0.0137,
-      '1W': 0.0961,
-      '1M': 0.4166,
-      '1Y': 5,
-    }
-    details.fees = 5
+    details.feeTiers = [7, 5, 4]
     details.tvl = 7060624149.296207
-    details.nodeUptime = {
-      '1D': 93.2,
-      '1W': 96.9,
-      '1M': 95,
-      '1Y': 92.1,
-    }
-    details.integrityRebate = true
-    details.availabilityRebate = false
     return of(details)
   }
 }
