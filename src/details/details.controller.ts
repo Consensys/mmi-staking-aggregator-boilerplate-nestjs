@@ -26,7 +26,7 @@ export class DetailsController {
   public getDetails(): Observable<Details> {
     // TODO Implement me!
     const details = new Details()
-    details.feeTiers = [7, 5, 4]
+    details.feeTiers = [7, 5, 4, 3, 2]
     details.tvl = 7060624149.296207
     return of(details)
   }
